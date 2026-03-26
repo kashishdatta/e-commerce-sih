@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_customer_health
+    description: "Master table containing customer RFM scoring and dynamic churn probability based on inter-purchase time."
+    columns:
+      - name: anonymous_id
+        description: "The unique identifier of the user"
+        tests:
+          - unique
+          - not_null
+      - name: r_score
+        description: "Recency Score (1-5, 5 is best)"
+      - name: f_score
+        description: "Frequency Score (1-5, 5 is best)"
+      - name: m_score
+        description: "Monetary Score (1-5, 5 is best)"
+      - name: is_high_churn_risk
+        description: "Boolean flag determining if user is outside of 2 std devs of their typical buying cycle"
+
+  - name: mart_cohort_retention
+    description: "Master table containing the monthly cohort retention matrix"
+    columns:
+      - name: cohort_month
+        description: "The month the user joined"
+        tests:
+          - not_null
+      - name: active_users
+        description: "Number of active users in the given month_number"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0

@@ -1,0 +1,11 @@
+sih:
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: "your-gcp-project-id" # REPLACE WITH YOUR GCP PROJECT ID
+      dataset: "sih_dev"             # The dataset where the models will be created
+      threads: 4
+      timeout_seconds: 300
+      location: US
+  target: dev

@@ -1,0 +1,6 @@
+streamlit==1.42.0
+pandas==2.2.3
+numpy==2.2.3
+plotly==6.0.0
+dbt-core==1.9.2
+dbt-bigquery==1.9.0
