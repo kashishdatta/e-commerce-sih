@@ -4,6 +4,8 @@
 **Role:** Senior Data Analyst / Product Manager  
 **Tech Stack:** `dbt Core`, `Google BigQuery`, `Streamlit`, `Python`, `SQL`, `Gemini API`
 
+🔗 **Live Dashboard Demo:** [https://e-commerce-sih.streamlit.app](https://e-commerce-sih.streamlit.app)
+
 ---
 
 ## 🚀 Executive Summary
